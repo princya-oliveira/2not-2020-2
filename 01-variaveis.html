@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modelo de documento HTML</title>
+    <script>
+        // use strict impede que variáveis sejam declaradas 
+        // sem o uso de let, var ou const
+        // inicializar variáveis diretamente não é boa prática de programação 
+        "use strict"
+        
+        // declaração de variáveis em JS
+        // declarando 3 variáveis separadamente
+        // variáveis declaradas sem receber valor
+        // tem o valor inicial indefinido/undefined
+
+        let a
+        let b
+        let c
+
+       // declarando 3 variáveis de uma só vez
+       let x, y, z
+
+       let v1 = "Teste"         // variável tipo string
+       let v2 = 2.75            // variável tipo number
+       let v3 = true            // variável tipo boolean
+       let v4 = 70              // variável tipo number
+       let v5 = 'Outro teste'   // variável tipo string
+       let v6                   // undefined
+       
+       // mudando o valor de uma variável v2
+       v2 = "Batata" // tipo da variável mudou para string
+
+       // declarando várias variáveis com valor e sem valor
+       let q1 = 5, q2 = 7, q3 = "4", res 
+
+       // operadores aritméticos
+       res = q1 - q2    // subtração de números
+       res = q1 - q3    // subtração com conversão de string p/ número
+       res = q1 - v2    // falha na conversão de v2 p/ número, porque 
+                        // dentro da string não há um número válido
+                        // o resultado da operação é NaN (Not a Number)
+       alert(res)
+
+       // multiplicação
+       res = q1 * q2    // 35
+       res = q1 * q3    // 20, com conversão do q3
+       res = q1 * v2    // NaN
+       alert(res)
+
+       // divisão
+       res = q1 / q2    // 0.7142
+       res = q1 / q3    // 1.25, com conversão de q3
+       res = q1 / v2    // NaN
+       alert(res)
+       
+       // adição
+       res = q1 + q2    // 12
+       
+       // com o sinal de +, havendo pelo menos uma string entre os termos,
+       // haverá a conversão p/ string dos demais termos e todos serão concatenados
+       res = q1 + q3    // "54", houve concatenação
+
+       res = q1 + v2    // "5batata", houve concatenação
+
+       // forçando a soma de 1 nº com 1 string que contém um valor numérico válido
+
+       // forma 1 - usando Number()
+       res = q1 + Number(q3)    // 9
+       // forma 2 - usando parseint()
+       res = q1 + parseInt(q3)  // 9
+
+       // potenciação (** introduzido JS > 2014)
+       res = q1 ** q2   // 78125
+       res = q1 ** q3   // 625, com conversão de q3
+       res = q1 ** v2   // NaN
+
+       // outra forma de potenciação (forma antiga)
+       res = Math.pow(q1, q2)    // 78125
+
+       // módulo ou resto da divisão
+       res = 5 % 2      // 1 (resto da divisão)
+       res = 11 % 3     // 2 (resto da divisão)
+       res = 8 % 2      // 0
+    
+       alert(res)
+       
+       // descobrindo o tipo das variáveis
+       alert(typeof v2) 
+    
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
