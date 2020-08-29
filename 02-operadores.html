@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modelo de documento HTML</title>
+    <script>
+        // use strict impede que variáveis sejam declaradas 
+        // sem o uso de let, var ou const
+        // inicializar variáveis diretamente não é boa prática de programação 
+        "use strict"
+        
+        /*
+            OPERADORES RELACIONAIS
+            > maior que
+            < menor que
+            >= maior ou igual que
+            <= menor ou igual que
+
+        */
+
+       // operador de atribuição de valor
+       // usando apenas "=" p/ atribuir valor
+       let a = 3, b = 6, c = "6"
+
+       // operador de igualdade
+       // testando a igualdade de dias variáveis
+       // para testar a igualdade usamos "=="
+       //alert( a == b)     // false
+       //alert(b == c)      // true
+
+       // operador de igualdade estrita ou "exatamente igual"
+       // tem que ser igual o valor e tambem o tipo da variável
+       //alert(b === c)     // false
+
+       // operador de diferença 
+       //alert(a != b)        // true
+       //alert(b != c)        // false
+
+       // operador de diferença estrita ("exatamente diferente")
+       //alert(b !== c)     // true
+
+       /*
+            OPERADORES LÓGICOS
+            && E lógico (and)
+            || OU lógico (or)
+            ! NÃO lógico (not)
+       */
+
+      //alert(5 > 4 && 2 > 1)     // true
+      //alert(5 < 4 && 2 > 1)     // false
+
+      //alert(5 > 4 || 2 > 1)     // true
+      //alert(5 < 4 || 2 > 1)     // true
+
+      // 5 + 4 * 2, neste expressão há prescendência de operação
+      // assim, a multiplicação será resolvida primeiro
+      // com o NOT ocorre a mesma coisa, se ele estiver em uma expressão
+      // ele será a primeira expressão a ser resolvida entre outras
+
+      /*
+            CONVERSÃO DE NÚMEROS PARA BOOLEANO
+            0 -> será convertido para false
+            qualquer valor não-zero -> convertido para false
+      */
+
+        // o operador not (!) tem uma precedência muito alta
+        // (é interpretado primeiro) e, por isso, quase sempre
+        // é usado com parênteses
+        //alert(!(5 > 4 && 2 > 1))
+
+        // (4 > 5 || 3 == 3) && 2 > 5
+        
+        // PRECEDÊNCIA DOS OPERADORES LÓGICOS
+        // 1º ! (not)
+        // 2º && (and)
+        // 3º || (or)
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
