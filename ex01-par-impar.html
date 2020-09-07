@@ -17,13 +17,15 @@
             ou ímpar e informe ao usuário usando alert().
         */
         
-        let num = prompt("Informe um número inteiro:")
-        let res = num % 2 
-
-        if(res == 0) {
+        // prompt() sempre recolhe respostas do tipo string
+        // por isso vamos tentar converter a entrada do usuário
+        // em nº inteiro usando paseInt
+        let num = parseInt(prompt("Informe um número inteiro:"))
+         
+        if(num % 2 == 0) {
             alert("O número " + num + " é par")
         }
-        else if(res != 0) {
+        else {
             alert("O número " + num + " é ímpar")
         }
         
