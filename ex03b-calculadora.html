@@ -38,22 +38,34 @@
             alert("ERRO: pelo menos um número informado é inválido.")
             temErro = true
         }
-        else if (oper == "+") {
-            res = num1 + num2
-        }
-        else if (oper == "-") {
-            res = num1 - num2
-        }
-        else if (oper == "*" || oper == "X" || oper == "x") {
-            res = num1 * num2
-        }
-        else if (oper == "/" || oper == ":") {
-            res = num1 / num2
-        }
+
         else {
-            alert("ERRO: o operador informado é inválido.")
-            temErro = true
+            switch(oper) {
+                case "+":
+                    res = num1 + num2
+                    break
+
+                case "-":
+                    res = num1 - num2
+                    break
+
+                case "X":   // case vazio
+                case "x":   // case vazio
+                case "*":   
+                    res = num1 * num2
+                    break
+
+                case "/":   // case vazio
+                case ":":
+                    res = num1 / num2
+                    break
+
+                default:    // se não entrar nenhum case
+                    alert("ERRO: o operado informado é inválido.")
+                    temErro = true
+            }    
         }
+
         if (!temErro) {
             //document.write("O resultado da operação: " + num1 + " " + oper + " " + 
                 //num2 + " é igual a " + res + ".")
