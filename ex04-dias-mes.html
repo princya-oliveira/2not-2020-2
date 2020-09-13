@@ -23,6 +23,34 @@
             FEVEREIRO: 28 dias (29 em anos bissextos)
         */
 
+        let mes = prompt("Informe o número correspondente ao mês (1 a 12):")
+
+        switch(mes) {
+            case "1":
+            case "3":
+            case "5":
+            case "7":
+            case "8":
+            case "10":
+            case "12":
+                alert("O mês escolhido tem 31 dias.")
+                break
+            
+            case "4":
+            case "6":
+            case "9":
+            case "11":
+                alert("O mês escolhido tem 30 dias.")
+                break
+
+            case "2":
+                alert("O mês escolhido tem 28 dias (e 29 dias em anos bissextos).")
+                break
+
+            default:
+                alert("O mês escolhido é inválido")
+        }
+
     </script>
 </head>
 <body>
