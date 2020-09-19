@@ -22,6 +22,30 @@
 
         */
 
+        let num1, num2
+
+        do {
+            
+            do {
+                num1 = parseInt(prompt("Informe o primeiro número inteiro:"))
+            } while(isNaN(num1))
+
+            do {
+                num2 = parseInt(prompt("Informe o segundo número inteiro:"))
+            } while(isNaN(num2))
+
+        } while(num1 >= num2) // garante que o num1 < num2
+
+        let soma = 0
+        for(let i = num1; i <= num2; i++) {
+            soma += i // soma = soma + i
+        }
+
+        document.write(`A soma dos números entre ${num1} e ${num2} é ${soma}.`)
+
+
+
+
     </script>
 </head>
 <body>
