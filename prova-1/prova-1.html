@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modelo de documento HTML</title>
+    <script>
+        // use strict impede que variáveis sejam declaradas 
+        // sem o uso de let, var ou const
+        // inicializar variáveis diretamente não é boa prática de programação 
+        "use strict"
+    
+
+    // 1ª instrução, usando for, lombofaixas a cada 29km dos 400km de SP -> Franca:
+    for(let km = 400; km >= 1; km--) {
+        if(km % 29 == 0) {
+            document.write(`Lombofaixa no quilômetro ${km}<br>`)
+        }
+    }
+
+    // 2ª instrução usando do..while
+    let quilometro 
+    do {
+         // verificação de número inteiro dentro do intervalo 1 - 400:
+        quilometro = parseInt(prompt("Informe um quilômetro entre 1 e 400:"))
+    } while(isNaN(quilometro) || (quilometro < 1 || quilometro > 400))
+        
+    // informando ao usuário se existe alguma francanice no quilômetro informado 
+    switch(quilometro) {
+        case 92: //case vazio
+        case 177: //case vazio
+        case 291: //case vazio
+        case 388:
+        alert("FRANCANICE AQUI: Megaloja do Magazine Luiza.")
+        break
+
+        case 153: //case vazio
+        case 356:
+        alert("FRANCANICE AQUI: Drive-thru dos Calçados Rafarillo.")
+        break
+
+        case 187:
+        alert("FRANCANICE AQUI: Posto de recarga da Viação São José.")
+        break
+
+        case 210:
+        alert("FRANCANICE AQUI: Filial da Padaria Estrela.")
+        break
+
+        case 314:
+        alert("FRANCANICE AQUI: Fábrica do Jubileu do Amendoim.")
+        break
+
+        case 367:
+        alert("FRANCANICE AQUI: Franca Acqua Parque Unidade II.")
+        break
+
+        default:
+        alert("Vapo, tem nada aqui não. Segue reto toda vida, meu fii!")        
+    }
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
