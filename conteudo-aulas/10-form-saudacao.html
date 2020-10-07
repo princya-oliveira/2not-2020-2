@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Saudação</title>
+    <style>
+    /*1º as regras gerais e abaixo destas as exceções*/
+
+        label {
+            /* Forçar o modo de exibição em bloco */
+            display: block;
+        }
+        fieldset label {
+            display: inline;
+        }
+        fieldset {
+            border: 1px solid lightgray;
+            border-radius: 8px;
+            width: 200px;
+        }
+        div, fieldset {
+            margin-bottom: 15px;
+        }
+    </style>    
+
+</head>
+<body>
+    <h1>Formulário de Saudação</h1>
+    
+    <div>
+        <label>Primeiro nome</label>
+        <input type="text" id="primeiro-nome" placeholder="Informe seu primeiro nome" size="25">
+    </div>
+
+    <div>
+        <label>Sobrenome</label>
+        <input type="text" id="sobrenome" placeholder="Informe seu sobrenome" size="25">
+    </div>
+
+    <div>
+        <label>Forma de Tratamento</label>
+        <select id="forma-tratamento">
+            <option>(Selecione)</option>
+            <option>Vossa Majestade</option>
+            <option>Excelentíssimo/a</option>
+            <option>Ilustríssimo/a</option>
+            <option>Vossa Senhoria</option>
+            <option>Senhor/a</option>
+            <option>Cremosíssimo/a</option>
+        </select>
+    </div>
+
+    <fieldset>
+        <!--Name="" cria um grupo de opções, em que apenas uma pode estar marcada;
+            For="" liga um input a um label, para que se possa selecionar o botão clicando também no texto-->
+        <legend>Sexo</legend>
+        <input type="radio" id="masculino" name="sexo">
+        <label for="masculino">Masculino</label>
+        <br>
+        <input type="radio" id="feminino" name="sexo" checked>
+        <label for="feminino">Feminino</label>
+    </fieldset>
+
+    <div>
+        <label>Hora do Dia</label>
+        <input type="number" id="hora-dia" min="0" max="23">
+    </div>
+
+    <fieldset>
+        <legend>Exibição da Saudação</legend>
+        <input type="checkbox" id="alert" checked>
+        <label for="alert">Exibir com alert()</label>
+        <br>
+        <input type="checkbox" id="document">
+        <label for="document">Exibir no documento</label>
+    </fieldset>
+
+    <div id="saudacao"></div>
+
+    <div>
+        <button id="enviar">Enviar</button>
+    </div>
+
+    <script>
+        // use strict impede que variáveis sejam declaradas 
+        // sem o uso de let, var ou const
+        // inicializar variáveis diretamente não é boa prática de programação 
+        "use strict"
+        
+
+
+    </script>
+</body>
+</html>
