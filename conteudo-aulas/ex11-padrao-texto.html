@@ -3,14 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>Gerador de Padrão</title>
+    <style>
+        h1 {
+            margin-left: 15px;
+            font-family: Arial;
+        }
+
+        div {
+            margin-left: 15px;
+            margin-bottom: 20px;
+            font-family: Arial;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 4px;
+        }
+    </style>  
+</head>
+
+<body>
+    <h1>Gerador de Padrão</h1>
+
+    <div>
+        <label>Entre com o caractere desejado</label>
+        <input type="text" id="texto" maxlength="1" 
+        size="25" placeholder="Informe apenas um caractere">
+    </div>
+
+    <div>
+        <label>Entre com números inteiros (1 a 100)</label>
+        <input type="number" id="num" min="1" max="100" size="25">
+    </div>
+
+    <div>
+        <button id="padrao"><strong>Gerar Padrão</strong></button>
+    </div>
+
+    <div id="resultado"></div>
+
     <script>
         // 'use strict' impede que variáveis sejam declaradas
         // sem o uso de let, var ou const
         // Inicializar variáveis diretamente é má prática de
         // programação
         'use strict'
-    
+        
         /* 
 
             Monte um formulário com os seguintes campos:
@@ -44,21 +83,42 @@
             ***********
         */
 
-    </script>
+        // Capturando os elementos do HTML
+        const elemTexto = document.querySelector("#texto")
+        const elemNum = document.querySelector("#num")
+        const elemPadrao = document.querySelector("#padrao")
+        const elemResultado = document.querySelector("#resultado")
 
-<!--[if gte mso 9]><xml>
-<mso:CustomDocumentProperties>
-<mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Editor msdt:dt="string">FAUSTO GONCALVES CINTRA</mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Editor>
-<mso:Order msdt:dt="string">176900.000000000</mso:Order>
-<mso:ComplianceAssetId msdt:dt="string"></mso:ComplianceAssetId>
-<mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Author msdt:dt="string">FAUSTO GONCALVES CINTRA</mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Author>
-<mso:ContentTypeId msdt:dt="string">0x010100D1709B3E936BE4488A7EEB682FDD8227</mso:ContentTypeId>
-<mso:_SourceUrl msdt:dt="string"></mso:_SourceUrl>
-<mso:_SharedFileIndex msdt:dt="string"></mso:_SharedFileIndex>
-</mso:CustomDocumentProperties>
-</xml><![endif]-->
-</head>
-<body>
-    
+        // Validação de entradas e calculo do resultado
+        function validar() {
+            let valido = true
+
+            if (elemTexto.value.trim() == "") {
+                alert("Um caractere deve ser informado")
+                elemTexto.focus()
+                valido = false
+            }
+
+            else if (elemNum.value.trim() == "" || elemNum.value < 1 || elemNum.value > 100) {
+                alert("Informe um número inteiro entre 1 a 100")
+                valido = false
+            }
+
+            return valido
+        }
+
+        function gerarPadrao() {
+
+            if (validar()) {
+
+                for (let i = 1; i != elemNum.value; i = resultado + 1) {
+                    resultado += elemTexto.value + '<br>'
+                } 
+            }
+        }
+
+        elemPadrao.addEventListener("click", gerarPadrao)
+
+    </script> 
 </body>
 </html>
