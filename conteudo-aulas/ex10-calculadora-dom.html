@@ -1,9 +1,65 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>Calculadora</title>
+    <style>
+        
+        label {
+            display: block;
+            margin-bottom: 4px;
+            font-weight: bold;
+        }
+
+        div {
+            margin-left: 10px;
+            margin-bottom: 20px;
+            font-family: Arial;
+        }
+
+        h1 {
+            margin-left: 10px;
+            font-family: Arial;
+        }
+
+    </style>
+</head>
+
+<body>
+    <h1 >Calculadora</h1>
+    <div>
+        <label>Primeiro número</label>
+        <input type="number" id="num1" placeholder="Informe o 1º número" size="25">
+    </div>
+
+    <div>
+        <label>Operação aritmética</label>
+        <select id="operacao">
+            <option>(Selecione)</option>
+            <option>soma</option>
+            <option>subtração</option>
+            <option>multiplicação</option>
+            <option>divisão</option>
+            <option>potenciação</option>
+            <option>resto da divisão</option>
+        </select>
+    </div>
+
+    <div>
+        <label>Segundo número</label>
+        <input type="number" id="num2" placeholder="Informe o 2º número" size="25">
+    </div>
+
+    <div>
+        <button id="calcular"><strong>Calcular</strong></button>
+    </div>
+    <br><br>
+    <div>
+        <label>Resultado da operação:</label>
+        <span id="resultado"></span>
+    </div>
+
     <script>
         // 'use strict' impede que variáveis sejam declaradas
         // sem o uso de let, var ou const
@@ -27,21 +83,45 @@
 
         */
 
-    </script>
+        /* Capturando os elementos HTML */
+        let elemNum1 = document.querySelector("#num1")
+        let elemNum2 = document.querySelector("#num2")
+        let elemOperacao = document.querySelector("#operacao")
+        let elemCalcular = document.querySelector("#calcular")
+        let elemResultado = document.querySelector("#resultado")
 
-<!--[if gte mso 9]><xml>
-<mso:CustomDocumentProperties>
-<mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Editor msdt:dt="string">FAUSTO GONCALVES CINTRA</mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Editor>
-<mso:Order msdt:dt="string">177000.000000000</mso:Order>
-<mso:ComplianceAssetId msdt:dt="string"></mso:ComplianceAssetId>
-<mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Author msdt:dt="string">FAUSTO GONCALVES CINTRA</mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Author>
-<mso:ContentTypeId msdt:dt="string">0x010100D1709B3E936BE4488A7EEB682FDD8227</mso:ContentTypeId>
-<mso:_SourceUrl msdt:dt="string"></mso:_SourceUrl>
-<mso:_SharedFileIndex msdt:dt="string"></mso:_SharedFileIndex>
-</mso:CustomDocumentProperties>
-</xml><![endif]-->
-</head>
-<body>
-    
+        /* Validação de entradas do usuário e cálculos */
+        function calculo() {
+
+            let num1 = parseFloat(elemNum1.value)
+            let num2 = parseFloat(elemNum2.value)
+
+            if(!isNaN(num1) && !isNaN(num2)) {
+
+                switch(elemOperacao.selectedIndex) {
+                    case 1:
+                        elemResultado.innerText = num1 + num2
+                        break
+                    case 2:
+                        elemResultado.innerText = num1 - num2
+                        break
+                    case 3:
+                        elemResultado.innerText = num1 * num2
+                        break
+                    case 4:
+                        elemResultado.innerText = num1 / num2
+                        break
+                    case 5:
+                        elemResultado.innerText = num1 ^ num2
+                        break
+                    default:
+                        elemResultado.innerText = num1 % num2
+                }
+            }
+        }
+
+        elemCalcular.addEventListener("click", calculo)
+
+    </script>
 </body>
 </html>
