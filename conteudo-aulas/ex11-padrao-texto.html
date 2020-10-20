@@ -108,13 +108,12 @@
         }
 
         function gerarPadrao() {
-
             if (validar()) {
-
-                for (let i = 1; i != elemNum.value; i = resultado + 1) {
-                    resultado += elemTexto.value + '<br>'
-                } 
-            }
+                
+                do {
+                    elemResultado.value = elemTexto.value
+                } while (elemNum.value <= 1)
+            } 
         }
 
         elemPadrao.addEventListener("click", gerarPadrao)
