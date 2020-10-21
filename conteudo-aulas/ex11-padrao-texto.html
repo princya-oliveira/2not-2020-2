@@ -111,12 +111,13 @@
             if (validar()) {
                 let resposta = ""
                 let caractere = elemTexto.value
-                let cont = 1
+                let cont = 1 
 
                 while (cont <= elemNum.value) {
                     resposta += caractere + '<br>'
                     elemResultado.innerHTML = resposta
-
+                    caractere = caractere + elemTexto.value 
+                    cont = cont + 1
                 }
             } 
         }
