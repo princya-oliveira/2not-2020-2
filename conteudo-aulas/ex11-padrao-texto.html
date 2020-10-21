@@ -84,10 +84,10 @@
         */
 
         // Capturando os elementos do HTML
-        const elemTexto = document.querySelector("#texto")
-        const elemNum = document.querySelector("#num")
-        const elemPadrao = document.querySelector("#padrao")
-        const elemResultado = document.querySelector("#resultado")
+        let elemTexto = document.querySelector("#texto")
+        let elemNum = document.querySelector("#num")
+        let elemPadrao = document.querySelector("#padrao")
+        let elemResultado = document.querySelector("#resultado")
 
         // Validação de entradas e calculo do resultado
         function validar() {
@@ -109,11 +109,14 @@
 
         function gerarPadrao() {
             if (validar()) {
-                let res = 1
+                let resposta = ""
+                let caractere = elemTexto.value
+                let cont = 1
 
-                while (res <= elemNum.value) {
-                    res = res + 1
-                    elemResultado.innerText = elemResultado.innerText + elemTexto.value
+                while (cont <= elemNum.value) {
+                    resposta += caractere + '<br>'
+                    elemResultado.innerHTML = resposta
+
                 }
             } 
         }
