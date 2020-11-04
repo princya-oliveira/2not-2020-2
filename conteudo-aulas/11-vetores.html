@@ -99,6 +99,30 @@
             console.log("Não existe")
         }
 
+        /*Percurso usando o loop for..of
+        1) Sempre percorre todos os elementos, do primeiro ao último
+        2) Não é possível usá-lo para percorrer na ordem decrescente
+        
+        frutas (plural) é o vetor
+        fruta (singular) é uma variável que, a cada iteração do loop
+        receberá o valor de um dos elementos do vetor, na ordem.
+        essa variável pode ter qualquer nome válido.*/
+
+        for (let fruta of frutas) {
+            console.log(fruta)
+        }
+
+        console.log('ForEach: -------------------------')
+
+        /* Percurso usando forEach()
+        forEach() é uma função que todos os vetores tem e que espera, 
+        como parâmetro, outra função que recebe um outro parâmetro, 
+        que contém cada um dos elementos do vetor*/
+
+        frutas.forEach(function(x)) {
+            console.log(x)
+        })
+
     </script>
 </head>
 <body>
